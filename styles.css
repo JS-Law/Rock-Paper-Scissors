@@ -2,6 +2,8 @@
     box-sizing: border-box;
     background-color: rgb(31, 35, 31);
     margin: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Roboto Mono', monospace;
 }
 .header{
     text-align: center;
@@ -13,6 +15,7 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    color: rgb(144, 146, 148);
 }
 .scoreboard{
     color: rgb(144, 146, 148);
@@ -36,7 +39,7 @@
 .btnSquare{ 
     margin: 5px;
     border-radius: .6rem;
-    background-color: aliceblue;
+    background-color: rgba(240, 248, 255, 0.474);
     padding-right: 10px;
     padding-left: 10px;
 }
