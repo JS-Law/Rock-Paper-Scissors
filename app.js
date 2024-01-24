@@ -74,11 +74,11 @@ function handleClick(playerSelection) {
 
 function updateScore() {
     if (roundWinner === 'tie') {
-        scoreInfo.textContent = "its a tie";
+        scorePlay.textContent = "its a tie";
     } else if (roundWinner === 'player') {
-        scoreInfo.textContent = "You won!";
+        scorePlay.textContent = "You won!";
     } else if (roundWinner === 'computer') {
-        scoreInfo.textContent = "You LOST boooooo";
+        scorePlay.textContent = "You LOST boooooo";
     }
     playerLiveScore.textContent = `Player Score: ${playerScore}`
     computerLiveScore.textContent = `Computer Score: ${computerScore}`
@@ -90,7 +90,7 @@ paperbtn.addEventListener('click', () => handleClick('SCISSORS'))
 restartBtn.addEventListener('click', restartGame)
 
 function restartGame() {
-    scorePlay.textContent = 'Choose your weapon';
+    scoreInfo.textContent = 'Choose your weapon';
     playerLiveScore.textContent = 'Player: 0';
     computerLiveScore.textContent = 'Computer: 0';
     playerScore = 0;
@@ -102,5 +102,5 @@ function restartGame() {
 function finalMessage() {
     return playerScore > computerScore
         ? (scoreInfo.textContent = "You won best out of five!")
-        : (scoreInfo.textContent = "You lost the game ...")
+        : (scoreInfo.textContent = `Computer beat you ${computerScore} to ${playerScore}`)
 }
