@@ -14,7 +14,9 @@ const scissorsBtn = document.querySelector('#scissorsBtn');
 const playerLiveScore = document.querySelector('#playerScore');
 const computerLiveScore = document.querySelector('#computerScore');
 const scoreInfo = document.querySelector('#scoreInfo');
-const scorePlay = document.querySelector('#scoreplay');
+const scorePlay = document.querySelector('#scorePlay');
+const restartBtn = document.querySelector('#restartGame');
+
 function playRound(playerSelection, computerSelection) {
     computerSelection
     if (playerSelection === computerSelection) {
@@ -67,7 +69,6 @@ function handleClick(playerSelection) {
     updateScore()
     if (isGameOver()) {
         finalMessage()
-        restartGame()
     }
 }
 
@@ -86,14 +87,20 @@ function updateScore() {
 rockBtn.addEventListener('click', () => handleClick('ROCK'))
 scissorsBtn.addEventListener('click', () => handleClick('PAPER'))
 paperbtn.addEventListener('click', () => handleClick('SCISSORS'))
+restartBtn.addEventListener('click', restartGame)
 
 function restartGame() {
-    scorePlay.textContent = "Choose your weapon";
-
+    scorePlay.textContent = 'Choose your weapon';
+    playerLiveScore.textContent = 'Player: 0';
+    computerLiveScore.textContent = 'Computer: 0';
+    playerScore = 0;
+    computerScore = 0;
+    roundWinner = '';
+    updateScore();
 }
 
 function finalMessage() {
     return playerScore > computerScore
-    ? (scoreInfo.textContent = "You won best out of five!")
-    : (scoreInfo.textContent = "You lost the game ...")
+        ? (scoreInfo.textContent = "You won best out of five!")
+        : (scoreInfo.textContent = "You lost the game ...")
 }
